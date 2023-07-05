@@ -18,13 +18,14 @@ class _CalculatorState extends State<Calculator> {
 
   buttonPressed(String buttonText) {
     if (buttonText == "C") {
-      _output = "0";
+      _output = "";
       num1 = 0.0;
       num2 = 0.0;
       operand = "";
+      output='0';
     }
     else if (buttonText == "AC") {
-      _output = "0";
+      _output = "";
       num1 = 0.0;
       num2 = 0.0;
       operand = "";
@@ -34,6 +35,7 @@ class _CalculatorState extends State<Calculator> {
       num1 = double.parse(output);
       operand = buttonText;
       _output = "";
+      history=num1.toStringAsFixed(0).toString() + operand.toString() ;
     }
     else if (buttonText == ".") {
       if (_output.contains(".")) {
@@ -49,23 +51,23 @@ class _CalculatorState extends State<Calculator> {
 
       if (operand == "+") {
         _output = (num1 + num2).toString();
-        history=num1.toString() + operand.toString() + num2.toString();
+        history=num1.toStringAsFixed(0).toString() + operand.toString() + num2.toStringAsFixed(0).toString();
       }
       if (operand == "-") {
         _output = (num1 - num2).toString();
-        history=num1.toString() + operand.toString() + num2.toString();
+        history=num1.toStringAsFixed(0).toString() + operand.toString() + num2.toStringAsFixed(0).toString();
       }
       if (operand == "*") {
         _output = (num1 * num2).toString();
-        history=num1.toString() + operand.toString() + num2.toString();
+        history=num1.toStringAsFixed(0).toString() + operand.toString() + num2.toStringAsFixed(0).toString();
       }
       if (operand == "/") {
         _output = (num1 / num2).toString();
-        history=num1.toString() + operand.toString() + num2.toString();
+        history=num1.toStringAsFixed(0).toString() + operand.toString() + num2.toStringAsFixed(0).toString();
       }
       if (operand == "%") {
         _output = (num1 % num2).toString();
-        history=num1.toString() + operand.toString() + num2.toString();
+        history=num1.toStringAsFixed(0).toString() + operand.toString() + num2.toStringAsFixed(0).toString();
       }
       num1 = 0.0;
       num2 = 0.0;
