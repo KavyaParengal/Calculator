@@ -93,33 +93,32 @@ class _CalculatorState extends State<Calculator> {
         elevation: 5,
         backgroundColor: Colors.black26,
         centerTitle: true,
-        title: Text('Calculator',style: TextStyle(
+        title: const Text('Calculator',style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 24,
         ),),
       ),
       backgroundColor: Colors.black,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
+            alignment: const Alignment(1.0,1.0),
             child: Padding(
               padding: const EdgeInsets.only(top: 100,right: 20),
-              child: Text(history,style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w400),
+              child: Text(history,style: const TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w400),
               ),
             ),
-            alignment: Alignment(1.0,1.0),
           ),
           Container(
-            //height: (MediaQuery.of(context).size.height * 0.3),
+            alignment: const Alignment(1.0,1.0),
             child: Padding(
               padding: const EdgeInsets.only(right: 20,top: 20,left: 30),
-              child: Text(output,style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),
+              child: Text(output,style: const TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),
               ),
-            ),
-            alignment: Alignment(1.0,1.0),//color: Colors.white,
+            ),//color: Colors.white,
           ),
-          //Expanded(child: Divider(color: Colors.grey,thickness: 1,)),
-          SizedBox(height: 30,),
+          const Expanded(child: Divider(color: Colors.grey,thickness: .5,)),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -132,7 +131,6 @@ class _CalculatorState extends State<Calculator> {
               ],
             ),
           ),
-          SizedBox(height: 3,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -145,7 +143,6 @@ class _CalculatorState extends State<Calculator> {
               ],
             ),
           ),
-          SizedBox(height: 3,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -158,7 +155,6 @@ class _CalculatorState extends State<Calculator> {
               ],
             ),
           ),
-          SizedBox(height: 3,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -171,7 +167,6 @@ class _CalculatorState extends State<Calculator> {
               ],
             ),
           ),
-          SizedBox(height: 3,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -192,20 +187,20 @@ class _CalculatorState extends State<Calculator> {
     return Container(
       width: 115,
                 height: 70,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(33),
+      ),
                 child: FloatingActionButton.extended(
                   backgroundColor: clr,
                     onPressed: (){
                     buttonPressed(value);
                     },
-                    label: Text(value,style: TextStyle(
+                    label: Text(value,style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),textAlign: TextAlign.center,)
                 ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(33),
-      ),
               );
   }
 
@@ -214,7 +209,7 @@ class _CalculatorState extends State<Calculator> {
       backgroundColor: clrbutton,
       radius: 41,
       child: TextButton(child: Text(calculatortxt,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 30,
           fontWeight: FontWeight.bold,
           color: Colors.white,
